@@ -46,8 +46,6 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
   const [otp, setOTP] = useState<string>("");
   const router = useRouter();
 
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
   useEffect(() => {
     setIsOpen(open);
 
@@ -129,9 +127,7 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
       if (response.status === 200) {
         setIsLoading(false);
         toast.success(
-          "Supriya Pleas add router.push(" +
-            "path" +
-            ") here instead of toast success"
+          "Please add router.push(" + "path" + ") here instead of toast success"
         );
         setIsOpen(false);
         setOTPSent(false);
@@ -173,7 +169,6 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
           setClose();
         }}
         style={customStyles}
-        appElement={document.getElementById("__next") || undefined}
       >
         <div className="flex w-full">
           {/* Details */}
@@ -182,7 +177,7 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
               <h1 className="text-xl text-black md:text-3xl">Login</h1>
               <p className="text-base md:text-lg text-black">
                 Or
-                <span className="text-green-500 underline font-normal ml-1 hover:cursor-pointer">
+                <span className="text-[#2bb8a4] underline font-semibold ml-1 hover:cursor-pointer">
                   Create an account
                 </span>
               </p>
@@ -231,9 +226,9 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
             <p className="text-xs text-black md:text-base">
               By clicking Get OTP, you agree to our
               <br className="block md:hidden" />
-              &nbsp;<u className="text-green-500">Terms and Conditions</u>
+              &nbsp;<u className="text-[#2bb8a4]">Terms and Conditions</u>
               &nbsp;and&nbsp;
-              <u className="text-green-500">Privacy Policies</u>
+              <u className="text-[#2bb8a4]">Privacy Policies</u>
             </p>
           </div>
         </div>
@@ -247,7 +242,6 @@ const LoginPopUp: React.FC<LoginProps> = ({ open, setClose }) => {
           setClose();
         }}
         style={customStyles}
-        appElement={document.getElementById("__next") || undefined}
       >
         <div className="flex justify-end w-full py-4 px-5">
           <button
